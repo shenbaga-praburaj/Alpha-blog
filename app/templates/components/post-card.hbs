@@ -1,0 +1,17 @@
+
+
+<div class="post">
+    <span class="title"> Kodaikanal </span> <span class="author"> by Shen Prabu </span>
+    <div class="desc"> This post is about a solo bike travel in this lockdown. Few months back I took a week leave from my work and went to Kodaikanal. It was the first time I... </div>
+    <ul class="tags"> <li> Travel </li> <li> Bike trip </li> <li> Vacation </li> </ul>
+</div>
+
+{{#each posts as |post|}}
+    <div class="post">
+        <span class="title"> {{post.title}} </span> <span class="author"> by {{post.author}} </span>
+        <div class="desc"> {{post.content}} </div>
+        <ul class="tags"> {{#each post.tags as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
+    </div>
+{{/each}}
+
+{{yield}}
