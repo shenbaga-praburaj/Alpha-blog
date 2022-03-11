@@ -92,6 +92,10 @@ $theme_clr-2: #ffedea;
             font-style: italic;
         }
 
+        .edit-post {
+            float: right;
+        }
+
         .desc {
             padding: 10px;
             padding-left: 0;
@@ -130,7 +134,7 @@ $theme_clr-2: #ffedea;
     height: 100%;
     background-color: rgba(0,0,0,0.4);
 
-    .modal-content {
+    .modal-dialogue {
         // position: absolute;
         background: #fff;
         width: 50%;
@@ -140,10 +144,10 @@ $theme_clr-2: #ffedea;
     }
 }
 
-.input-post {
+.modal-content {
     padding: 20px;
 
-    .input-post-header {
+    .modal-header {
         @include display-flex-center;
 
         .close {

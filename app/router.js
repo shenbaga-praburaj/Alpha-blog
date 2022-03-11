@@ -7,9 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('allposts');
+  this.route('allposts', {path: '/'});
   this.route('myposts', function() {
     this.route('new');
+    this.route('edit', {path: '/:post_id/edit'});
+    this.route('view', {path: '/:post_id'});
   });
   this.route('users');
   this.route('settings');

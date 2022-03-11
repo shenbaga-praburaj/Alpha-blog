@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="modal-dialogue">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2> {{post.title}} </h2>
+                <span class="close"> {{#link-to 'myposts'}} X {{/link-to}} </span>
+            </div>
+
+            <p> {{post.content}} </p>
+        </div>
+
+    </div>
+</div>
+
+{{yield}}

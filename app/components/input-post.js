@@ -12,18 +12,20 @@ export default Component.extend({
             console.log(post)
             if(post.id) {
                 // updateRecord
+
+                post.save()
+                this.router.transitionTo('myposts')
             } else {
                 // createRecord
 
-                post.id = this.globals.get('postId')
+                post.id = this.globals.get('postId') + 1
                 post.author = 'Shen Prabu'
-                post.tags = post.tags ? post.tags.split(',') : null
-                this.store.createRecord('post', post)
 
-                this.globals.set('postId', ++post.id)
+                let newPost = this.store.createRecord('post', post)
+                newPost.save()
 
                 this.set('post', {})
-                this.get('router').transitionTo('myposts')
+                this.router.transitionTo('myposts')
             }
         }
     }

@@ -1,9 +1,9 @@
 <div class="modal">
-    <div class="modal-content">
-       <div class="input-post">
+    <div class="modal-dialogue">
+       <div class="modal-content">
         
-            <div class="input-post-header">
-                <h2> New Post </h2>
+            <div class="modal-header">
+                <h2> {{#if edit}} Edit {{else}} New {{/if}} Post </h2>
                 <span class="close"> {{#link-to 'myposts'}} X {{/link-to}} </span>
             </div>
 
