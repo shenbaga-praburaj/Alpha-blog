@@ -10,7 +10,6 @@ export default Component.extend({
         savePost: function() {
             let post = this.get('post')
             let isNew = false;
-            // console.log(post)
 
             if(!post.id) {
                 post.id = this.globals.get('postId') + 1
@@ -20,22 +19,21 @@ export default Component.extend({
                 isNew = true;
             }
 
-            console.log(post)
 
-            // post.validate().then(({validations}) => {
+            post.validate().then(({validations}) => {
 
-            //     console.log(validations.isValid)
-
-                post.save()
-                this.router.transitionTo('myposts')
-                
-                if(isNew) {
-                    this.set('post', {})
+                if(validations.isValid) {
+                    post.save()
+                    this.router.transitionTo('myposts')
+                    
+                    if(isNew) {
+                        this.set('post', {})
+                    }
+                } else {
+                    alert(validations.message)
                 }
-
-            // }, () => {
-            //     console.log('error')
-            // })
+                
+            })
         }
     }
 });
