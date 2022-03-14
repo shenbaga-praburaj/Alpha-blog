@@ -92,7 +92,7 @@ $theme_clr-2: #ffedea;
             font-style: italic;
         }
 
-        .edit-post {
+        .post-actions {
             float: right;
         }
 
@@ -100,28 +100,29 @@ $theme_clr-2: #ffedea;
             padding: 10px;
             padding-left: 0;
         }
-
-        .tags {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            list-style-type: none;
-
-            li {
-                border: 1px solid;
-                border-radius: 5px;
-                padding: 2px;
-                background-color: $theme_clr-1;
-            }
-
-            li:not(:first-child) {
-                margin-left: 10px;
-            }
-        }
+        
     }
 
     .post:hover {
         background-color: $theme_clr-2;
+    }
+}
+
+.tags {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+
+    li {
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 2px;
+        background-color: $theme_clr-1;
+    }
+
+    li:not(:first-child) {
+        margin-left: 10px;
     }
 }
 
@@ -141,6 +142,11 @@ $theme_clr-2: #ffedea;
         height: auto;
         margin: 5% 25%;
         border-radius: 10px;
+    }
+
+    .modal-dialogue.alert {
+        width: 20%;
+        margin: 15% 40%;
     }
 }
 
@@ -173,4 +179,18 @@ $theme_clr-2: #ffedea;
         justify-content: center;
     }
 
+}
+
+.modal-content-alert {
+    padding: 20px;
+
+    .alert-msg {
+        text-align: center;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }

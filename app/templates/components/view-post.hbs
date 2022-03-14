@@ -8,6 +8,8 @@
             </div>
 
             <p> {{post.content}} </p>
+
+            <ul class="tags"> {{#each post.tagsArray as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
         </div>
 
     </div>

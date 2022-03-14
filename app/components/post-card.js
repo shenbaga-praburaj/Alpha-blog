@@ -9,8 +9,7 @@ export default Component.extend({
             this.router.transitionTo('myposts.view', post)
         },
 
-        preventDefault: function(e) {
-            e.preventDefault()
+        dummyAction: function() {
         }
     }
 });

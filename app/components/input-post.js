@@ -9,24 +9,33 @@ export default Component.extend({
     actions: {
         savePost: function() {
             let post = this.get('post')
+
             console.log(post)
-            if(post.id) {
-                // updateRecord
 
-                post.save()
-                this.router.transitionTo('myposts')
-            } else {
-                // createRecord
+            // post.validate().then(({validations}) => {
 
-                post.id = this.globals.get('postId') + 1
-                post.author = 'Shen Prabu'
+            //     console.log(validations.isValid)
+                
+                if(post.id) {
+                    // updateRecord
 
-                let newPost = this.store.createRecord('post', post)
-                newPost.save()
+                    post.save()
+                    this.router.transitionTo('myposts')
+                } else {
+                    // createRecord
 
-                this.set('post', {})
-                this.router.transitionTo('myposts')
-            }
+                    post.id = this.globals.get('postId') + 1
+                    post.author = 'Shen Prabu'
+
+                    let newPost = this.store.createRecord('post', post)
+                    newPost.save()
+
+                    this.set('post', {})
+                    this.router.transitionTo('myposts')
+                }
+            // }, () => {
+            //     console.log('error')
+            // })
         }
     }
 });

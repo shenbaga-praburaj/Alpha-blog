@@ -1,7 +1,11 @@
 
 
 <div class="post" {{action 'viewPost' post}}>
-    <span class="title"> {{post.title}} </span> <span class="author"> by {{post.author}} </span> <span class="edit-post" {{action 'preventDefault'}}> {{#link-to 'myposts.edit' post}} edit {{/link-to}} </span>
+    <span class="title"> {{post.title}} </span> <span class="author"> by {{post.author}} </span> 
+    <span class="post-actions" {{action 'dummyAction' bubbles=false}}>
+        {{#link-to 'myposts.edit' post}} edit {{/link-to}} &nbsp;
+        {{#link-to 'myposts.delete' post}} delete {{/link-to}} 
+    </span>
     <div class="desc"> {{post.content}} </div>
     <ul class="tags"> {{#each post.tagsArray as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
 </div>

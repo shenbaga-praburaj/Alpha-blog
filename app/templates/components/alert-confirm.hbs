@@ -1,0 +1,18 @@
+
+<div class="modal">
+    <div class="modal-dialogue alert">
+        <div class="modal-content-alert">
+            
+            <div class="alert-msg">
+                {{message}}
+            </div>
+
+            <div class="buttons">
+                <button onclick={{@confirmAction}}> confirm </button>
+                <button onclick={{@cancelAction}}> cancel </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{yield}}

@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('new');
     this.route('edit', {path: '/:post_id/edit'});
     this.route('view', {path: '/:post_id'});
+    this.route('delete', {path: '/:post_id/delete'});
   });
   this.route('users');
   this.route('settings');
