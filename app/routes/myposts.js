@@ -5,12 +5,13 @@ export default Route.extend({
     store: service(),
     globals: service(),
 
-    setupController: function(controller, model) {
-        controller.set('posts', model)
-        this.globals.set('postId', model.length)
-    },
-
     model: function() {
         return this.store.findAll('post');
+    },
+
+    actions: {
+        didTransition: function() {
+            this.globals.set('postId', +this.store.peekAll('post').lastObject.id)
+        }
     }
 });
