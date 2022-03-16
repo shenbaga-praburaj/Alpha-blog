@@ -1,7 +1,7 @@
 
 
 <div class="post" {{action 'viewPost' post}}>
-    <span class="title"> {{post.title}} </span> <span class="author"> by {{post.author}} </span> 
+    <span class="post--title"> {{post.title}} </span> <span class="post--author"> by {{post.author}} </span> 
     <span class="post-actions" {{action 'dummyAction' bubbles=false}}>
         {{#link-to 'posts.edit' post}} edit {{/link-to}} &nbsp;
         {{#link-to 'posts.delete' post}} delete {{/link-to}} 

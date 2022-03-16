@@ -5,11 +5,11 @@ export default Component.extend({
     router: service(),
 
     actions: {
-        viewPost: function(post) {
+        viewPost(post) {
             this.router.transitionTo('posts.view', post)
         },
 
-        dummyAction: function() {
+        dummyAction() {
         }
     }
 });

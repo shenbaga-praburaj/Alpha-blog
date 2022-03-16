@@ -39,7 +39,9 @@ export default DS.Model.extend(validations, {
     tags: DS.attr(),
     author: DS.attr('string'),
 
-    tagsArray: computed('tags', function() {
+    tagsArray: computed('tags', {
+      get() {
         return this.tags ? this.tags.split(',') : this.tags
+      }
     })
 });

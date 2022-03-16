@@ -5,12 +5,12 @@ export default Controller.extend({
     router: service(),
 
     actions: {
-        delete: function() {
-            this.get('model').destroyRecord()
+        delete() {
+            this.model.destroyRecord()
             this.router.transitionTo('posts')
         },
 
-        cancel: function() {
+        cancel() {
             this.router.transitionTo('posts')
         }
     }

@@ -84,14 +84,6 @@ $theme_clr-2: #ffedea;
         margin: 10px;
         cursor: pointer;
 
-        .title {
-            font-size: 25px;
-        }
-
-        .author {
-            font-style: italic;
-        }
-
         .post-actions {
             float: right;
         }
@@ -106,6 +98,14 @@ $theme_clr-2: #ffedea;
     .post:hover {
         background-color: $theme_clr-2;
     }
+}
+
+.post--title {
+    font-size: 25px;
+}
+
+.post--author {
+    font-style: italic;
 }
 
 .tags {
@@ -153,13 +153,17 @@ $theme_clr-2: #ffedea;
 .modal-content {
     padding: 20px;
 
-    .modal-header {
+    .modal-header.input {
         @include display-flex-center;
 
         .close {
             margin-left: auto;
             cursor: pointer;
         }
+    }
+
+    .close {
+        float: right;
     }
 
     .title {

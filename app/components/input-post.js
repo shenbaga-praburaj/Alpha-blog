@@ -7,20 +7,12 @@ export default Component.extend({
     router: service(),
 
     actions: {
-        savePost: function() {
-            let post = get(this, 'post') // this.post
-            //this.post.title //this.post.tag.name
-            //get(this, 'post.tag.name');
-            let isNew = false;
-
-            if(!post.id) {
-                post.author = 'Shen Prabu'
-
-                post = this.store.createRecord('post', post)
-                isNew = true;
-            }
-            post.save()
-                    this.router.transitionTo('posts')
+        savePost() {
+            
+            this.post.save().then(() => {
+                this.router.transitionTo('posts')
+            })
+            
             // post.validate().then(({validations}) => {
 
             //     if(validations.isValid) {

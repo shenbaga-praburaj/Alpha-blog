@@ -2,7 +2,7 @@
     <div class="modal-dialogue">
        <div class="modal-content">
         
-            <div class="modal-header">
+            <div class="modal-header input">
                 <h2> {{#if edit}} Edit {{else}} New {{/if}} Post </h2>
                 <span class="close"> {{#link-to 'posts'}} X {{/link-to}} </span>
             </div>
@@ -15,6 +15,9 @@
 
             <div> Tags </div>
             {{input class="title" value=post.tags}}
+
+            <div> Author </div>
+            {{input class="title" value=post.author}}
 
             <div class="save-btn-container">
                 <button class="btn-save-post" {{action 'savePost'}}> Save </button>
