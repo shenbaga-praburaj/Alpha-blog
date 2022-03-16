@@ -1,9 +1,11 @@
 
-{{#each posts as |post|}}
-    {{post-card post=post}}
-{{else}}
-No posts yet.
-{{/each}}
+<div class="post-list">
+    {{#each posts as |post|}}
+        {{post-card post=post}}
+    {{else}}
+        No posts yet.
+    {{/each}}
+</div>
 
 
 {{yield}}

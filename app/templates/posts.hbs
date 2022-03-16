@@ -1,0 +1,13 @@
+
+<div class="post-list-header">
+
+    <h2> My Posts </h2>
+
+    <button class="btn-new-post"> {{#link-to 'posts.new'}} + New Post {{/link-to}} </button>
+
+</div>
+
+{{post-list posts=model}}
+    
+
+{{outlet}}

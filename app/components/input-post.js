@@ -1,39 +1,40 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import { get, set } from '@ember/object';
 
 export default Component.extend({
     store: service(),
-    globals: service(),
     router: service(),
 
     actions: {
         savePost: function() {
-            let post = this.get('post')
+            let post = get(this, 'post') // this.post
+            //this.post.title //this.post.tag.name
+            //get(this, 'post.tag.name');
             let isNew = false;
 
             if(!post.id) {
-                post.id = this.globals.get('postId') + 1
                 post.author = 'Shen Prabu'
 
                 post = this.store.createRecord('post', post)
                 isNew = true;
             }
+            post.save()
+                    this.router.transitionTo('posts')
+            // post.validate().then(({validations}) => {
 
-
-            post.validate().then(({validations}) => {
-
-                if(validations.isValid) {
-                    post.save()
-                    this.router.transitionTo('myposts')
+            //     if(validations.isValid) {
+            //         post.save()
+            //         this.router.transitionTo('posts')
                     
-                    if(isNew) {
-                        this.set('post', {})
-                    }
-                } else {
-                    alert(validations.message)
-                }
+            //         if(isNew) {
+            //             this.set('post', {})
+            //         }
+            //     } else {
+            //         alert(validations.message)
+            //     }
                 
-            })
+            // })
         }
     }
 });
