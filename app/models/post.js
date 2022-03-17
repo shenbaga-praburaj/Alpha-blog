@@ -23,13 +23,7 @@ const validations = buildValidations(
             max: 1000
           })
         ]
-      },
-    //   'post.tags': {
-    //     description: 'Hashtags',
-    //     validators: [
-    //         validator('format')
-    //     ]
-    //   }
+      }
     }
 );
 

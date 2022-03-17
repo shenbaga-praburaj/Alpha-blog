@@ -4,20 +4,16 @@
         
             <div class="modal-header input">
                 <h2> {{#if edit}} Edit {{else}} New {{/if}} Post </h2>
-                <span class="close"> {{#link-to 'posts'}} X {{/link-to}} </span>
+                <span class="close" {{action 'close'}}> X </span>
             </div>
 
-            <div> Title </div>
-            {{input class="title" value=post.title}}
+            {{valid-input label='Title' className="text-input-large" attrName='title' value=post.title errorMessage=(and showError (v-get post 'title' 'message'))}}
 
-            <div> Content </div>
-            {{textarea class="content" value=post.content}}
+            {{valid-input label='Content' className="text-area-large" attrName='content' value=post.content textarea=true errorMessage=(and showError (v-get post 'content' 'message'))}}
 
-            <div> Tags </div>
-            {{input class="title" value=post.tags}}
+            {{valid-input label='Tags' className="text-input-large" attrName='tags' value=post.tags}}
 
-            <div> Author </div>
-            {{input class="title" value=post.author}}
+            {{valid-input label='Author' className="text-input-large" attrName='author' value=post.author}}
 
             <div class="save-btn-container">
                 <button class="btn-save-post" {{action 'savePost'}}> Save </button>

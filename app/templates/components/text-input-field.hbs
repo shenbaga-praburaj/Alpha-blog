@@ -1,0 +1,17 @@
+<div class="input-row">
+  <label class="label">{{label}} </label>
+  <div class="field">
+    {{#if textarea}}
+        {{textarea class=inputClassName value=value}}
+    {{else}}
+        {{input class=inputClassName value=value}}
+    {{/if}}
+  </div>
+  {{#if errorMessage}}
+    <div class="error-msg">
+      {{errorMessage}}
+    </div>
+  {{/if}}
+</div>
+
+{{yield}}
