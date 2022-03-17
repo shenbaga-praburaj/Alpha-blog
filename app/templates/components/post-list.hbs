@@ -1,7 +1,9 @@
 
 <div class="post-list">
     {{#each posts as |post|}}
-        {{post-card post=post}}
+        {{#unless post.isNew}}
+            {{post-card post=post}}
+        {{/unless}}
     {{else}}
         No posts yet.
     {{/each}}
