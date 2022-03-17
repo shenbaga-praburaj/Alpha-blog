@@ -6,7 +6,7 @@ export default Route.extend({
     store: service(),
 
     setupController(controller, model) {
-        let newpost = this.store.createRecord('post')
+      set(controller, 'newPost',  this.store.createRecord('post'));
         set(controller, 'newPost', newpost)
     }
 });
