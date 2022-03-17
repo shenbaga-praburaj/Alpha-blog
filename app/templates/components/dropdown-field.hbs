@@ -1,0 +1,13 @@
+<label class="label">{{label}} </label>
+<div class="field">
+    <PowerSelect @triggerClass={{className}} @options={{options}} @selected={{selected}} @onchange={{onchange}} as |name|>
+        {{name}}
+    </PowerSelect>
+</div>
+{{#if errorMessage}}
+    <div class="error-msg">
+        {{errorMessage}}
+    </div>
+{{/if}}
+
+{{yield}}

@@ -1,6 +1,10 @@
 
+{{#if authors.length}}
+    {{dropdown-field label='Filter by Author' className='select-author' options=authors selected=author onchange=(action 'onChange')}}
+{{/if}}
+
 <div class="post-list">
-    {{#each posts as |post|}}
+    {{#each filteredPosts as |post|}}
         {{#unless post.isNew}}
             {{post-card post=post}}
         {{/unless}}

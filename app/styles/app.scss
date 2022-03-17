@@ -208,3 +208,10 @@ $theme_clr-2: #ffedea;
     width: 75%;
     height: 200px;
 }
+
+@import "ember-power-select";
+
+.select-author {
+    width: 25%;
+    margin-bottom: 20px;
+}
