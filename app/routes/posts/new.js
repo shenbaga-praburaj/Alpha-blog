@@ -7,6 +7,5 @@ export default Route.extend({
 
     setupController(controller, model) {
       set(controller, 'newPost',  this.store.createRecord('post'));
-        set(controller, 'newPost', newpost)
     }
 });
