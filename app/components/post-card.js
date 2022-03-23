@@ -6,7 +6,7 @@ export default Component.extend({
 
     actions: {
         viewPost(post) {
-            this.router.transitionTo('posts.view', post)
+            this.router.transitionTo('posts.post.view', post)
         },
 
         dummyAction() {
