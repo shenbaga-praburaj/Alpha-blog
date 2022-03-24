@@ -7,13 +7,13 @@
                 <span class="close" {{action 'close'}}> X </span>
             </div>
 
-            {{text-input-field label='Title' className="text-input-large" attrName='title' value=post.title errorMessage=(and showError (v-get post 'title' 'message'))}}
+            {{text-input-field label='Title' className="text-input-large" attrName='title' value=post.title errorMessage=(and showError (v-get post 'title' 'message')) onchange=(action 'testOnChange')}}
 
             {{text-input-field label='Content' className="text-area-large" attrName='content' value=post.content textarea=true errorMessage=(and showError (v-get post 'content' 'message'))}}
 
             {{text-input-field label='Tags' className="text-input-large" attrName='tags' value=post.tags}}
 
-            {{text-input-field label='Author' className="text-input-large" attrName='author' value=post.author}}
+            {{text-input-field label='Author' className="text-input-large" attrName='author' value=post.author onchange=(action 'testOnChange')}}
 
             <div class="save-btn-container">
                 <button class="btn-save-post" {{action 'savePost'}}> Save </button>

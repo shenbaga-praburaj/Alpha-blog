@@ -29,8 +29,14 @@ export default Component.extend({
         },
 
         close() {
+            // console.log(this.post.modelChanges())
+            // this.post.rollback()
             this.post.rollbackAttributes()
             this.router.transitionTo('posts')
+        },
+
+        testOnChange() {
+            set(this.post, 'testAttr', {title: this.post.title, test: 'test'})
         }
     }
 });
