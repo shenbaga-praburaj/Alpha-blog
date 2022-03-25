@@ -18,7 +18,12 @@ Router.map(function() {
       this.route('view', {path: ''});
     })
   });
-  this.route('settings');
+
+  this.route('newsposts', {path: '/newsposts'}, function() {
+    this.route('post', {path: '/:post_id'}, function() {
+      this.route('view', {path: ''});
+    });
+  });
 });
 
 export default Router;
