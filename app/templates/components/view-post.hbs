@@ -3,11 +3,12 @@
         <div class="modal-content">
 
             <span class="post--title"> {{post.title}} </span> <span class="post--author"> by {{post.author}} </span> 
-            <span class="close"> {{#link-to 'posts'}} X {{/link-to}} </span>
+            <span class="close"> {{#link-to route}} X {{/link-to}} </span>
 
-            <p> {{post.content}} </p>
+            <p> {{or post.content post.description}} </p>
 
             <ul class="tags"> {{#each post.tagsArray as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
+            <ul class="tags"> {{#each post.category as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
         </div>
 
     </div>

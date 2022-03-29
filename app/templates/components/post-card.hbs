@@ -1,13 +1,17 @@
 
 
-<div class="post" {{action 'viewPost' post}}>
+<div class="post" {{action 'viewPost' post route}}>
     <span class="post--title"> {{post.title}} </span> <span class="post--author"> by {{post.author}} </span> 
-    <span class="post-actions" {{action 'dummyAction' bubbles=false}}>
-        {{#link-to 'posts.post.edit' post}} edit {{/link-to}} &nbsp;
-        {{#link-to 'posts.post.delete' post}} delete {{/link-to}} 
-    </span>
-    <div class="desc"> {{post.content}} </div>
+    {{#if isEditable}}
+        <span class="post-actions" {{action 'dummyAction' bubbles=false}}>
+            {{#link-to 'posts.post.edit' post}} edit {{/link-to}} &nbsp;
+            {{#link-to 'posts.post.delete' post}} delete {{/link-to}} 
+        </span>
+    {{/if}}
+    <div class="desc"> {{or post.content post.description}} </div>
+    
     <ul class="tags"> {{#each post.tagsArray as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
+    <ul class="tags"> {{#each post.category as |tag|}} <li> {{tag}} </li> {{/each}} </ul>
 </div>
 
 {{yield}}

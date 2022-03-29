@@ -6,7 +6,7 @@
 <div class="post-list">
     {{#each filteredPosts as |post|}}
         {{#unless post.isNew}}
-            {{post-card post=post}}
+            {{post-card post=post isEditable=isEditable route=route}}
         {{/unless}}
     {{else}}
         No posts yet.
